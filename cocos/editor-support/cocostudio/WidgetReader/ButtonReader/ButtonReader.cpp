@@ -227,7 +227,7 @@ namespace cocostudio
         button->setTitleFontSize(DICTOOL->getIntValue_json(options, P_FontSize,14));
         
 
-        button->setTitleFontName(DICTOOL->getStringValue_json(options, P_FontName,"微软雅黑"));
+        button->setTitleFontName(DICTOOL->getStringValue_json(options, P_FontName,"Microsoft YaHei"));
         
         
         
@@ -311,7 +311,7 @@ namespace cocostudio
 		}
 		button->setBright(displaystate);
 
-        const char* fontName = options.has_fontname() ? options.fontname().c_str() : "微软雅黑";
+        const char* fontName = options.has_fontname() ? options.fontname().c_str() : "Microsoft YaHei";
         button->setTitleFontName(fontName);
         
         if (options.has_fontresource())
@@ -341,7 +341,7 @@ namespace cocostudio
         float cx = 0.0f, cy = 0.0f, cw = 0.0f, ch = 0.0f;
         float swf = 0.0f, shf = 0.0f;
         std::string text = "";
-        std::string fontName = "微软雅黑";
+        std::string fontName = "Microsoft YaHei";
         int fontSize = 0;
         int title_color_red = 255, title_color_green = 255, title_color_blue = 255;
         int cri = 255, cgi = 255, cbi = 255;

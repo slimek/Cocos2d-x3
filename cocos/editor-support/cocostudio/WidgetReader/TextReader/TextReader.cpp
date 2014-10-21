@@ -107,7 +107,7 @@ namespace cocostudio
       
         label->setFontSize(DICTOOL->getIntValue_json(options, P_FontSize,20));
        
-        std::string fontName = DICTOOL->getStringValue_json(options, P_FontName, "微软雅黑");
+        std::string fontName = DICTOOL->getStringValue_json(options, P_FontName, "Microsoft YaHei");
         
         std::string fontFilePath = jsonPath.append(fontName);
 		if (FileUtils::getInstance()->isFileExist(fontFilePath))
@@ -162,7 +162,7 @@ namespace cocostudio
         int fontSize = options.has_fontsize() ? options.fontsize() : 20;
         label->setFontSize(fontSize);
         
-        std::string fontName = options.has_fontname() ? options.fontname() : "微软雅黑";
+        std::string fontName = options.has_fontname() ? options.fontname() : "Microsoft YaHei";
         
         std::string fontFilePath = protocolBuffersPath.append(fontName);
 		if (FileUtils::getInstance()->isFileExist(fontFilePath))
@@ -218,7 +218,7 @@ namespace cocostudio
         
         label->setUnifySizeEnabled(false);
         
-        label->setFontName("微软雅黑");
+        label->setFontName("Microsoft YaHei");
         
         // attributes
         const tinyxml2::XMLAttribute* attribute = objectData->FirstAttribute();

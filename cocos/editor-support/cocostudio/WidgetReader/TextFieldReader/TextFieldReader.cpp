@@ -103,7 +103,7 @@ namespace cocostudio
         textField->setFontSize(DICTOOL->getIntValue_json(options, P_FontSize,20));
     
        
-        textField->setFontName(DICTOOL->getStringValue_json(options, P_FontName,"微软雅黑"));
+        textField->setFontName(DICTOOL->getStringValue_json(options, P_FontName,"Microsoft YaHei"));
         
         bool tsw = DICTOOL->checkObjectExist_json(options, P_TouchSizeWidth);
         bool tsh = DICTOOL->checkObjectExist_json(options, P_TouchSizeHeight);
@@ -171,7 +171,7 @@ namespace cocostudio
         textField->setFontSize(fontSize);
         
         
-        std::string fontName = options.has_fontname() ? options.fontname() : "微软雅黑";
+        std::string fontName = options.has_fontname() ? options.fontname() : "Microsoft YaHei";
         textField->setFontName(fontName);
         
 
@@ -217,7 +217,7 @@ namespace cocostudio
         
         textField->setUnifySizeEnabled(false);
         
-        textField->setFontName("微软雅黑");
+        textField->setFontName("Microsoft YaHei");
         
         // attributes
         const tinyxml2::XMLAttribute* attribute = objectData->FirstAttribute();
