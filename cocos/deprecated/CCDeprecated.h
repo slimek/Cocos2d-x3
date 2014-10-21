@@ -1037,13 +1037,14 @@ CC_DEPRECATED_ATTRIBUTE typedef __Array Array;
 CC_DEPRECATED_ATTRIBUTE typedef __Dictionary Dictionary;
 CC_DEPRECATED_ATTRIBUTE typedef __Dictionary CCDictionary;
 
-CC_DEPRECATED_ATTRIBUTE typedef __Double Double;
+// BRITTLE Modify: Conflicts with Caramel fundamental typedefs.
+//CC_DEPRECATED_ATTRIBUTE typedef __Double Double;
 CC_DEPRECATED_ATTRIBUTE typedef __Double CCDouble;
-CC_DEPRECATED_ATTRIBUTE typedef __Float Float;
+//CC_DEPRECATED_ATTRIBUTE typedef __Float Float;
 CC_DEPRECATED_ATTRIBUTE typedef __Float CCFloat;
 CC_DEPRECATED_ATTRIBUTE typedef __Integer Integer;
 CC_DEPRECATED_ATTRIBUTE typedef __Integer CCInteger;
-CC_DEPRECATED_ATTRIBUTE typedef __Bool Bool;
+//CC_DEPRECATED_ATTRIBUTE typedef __Bool Bool;
 CC_DEPRECATED_ATTRIBUTE typedef __Bool CCBool;
 CC_DEPRECATED_ATTRIBUTE typedef __String CCString;
 CC_DEPRECATED_ATTRIBUTE typedef __String String;
