@@ -1,5 +1,5 @@
 /****************************************************************************
- Copyright (c) 2010 Максим Аксенов
+ Copyright (c) 2010 Macsim Aksyenov
  Copyright (c) 2010 cocos2d-x.org  
  Copyright (c) 2013 Martell Malone
  

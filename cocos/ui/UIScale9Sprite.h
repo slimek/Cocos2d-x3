@@ -71,7 +71,7 @@ namespace ui {
         
         /**
          * Creates a 9-slice sprite with a texture file. The whole texture will be
-         * broken down into a 3×3 grid of equal blocks.
+         * broken down into a 3x3 grid of equal blocks.
          *
          * @see initWithFile(const Rect& capInsets, const char *file)
          */
@@ -79,7 +79,7 @@ namespace ui {
         
         /**
          * Creates a 9-slice sprite with a texture file and a delimitation zone. The
-         * texture will be broken down into a 3×3 grid of equal blocks.
+         * texture will be broken down into a 3x3 grid of equal blocks.
          *
          * @see initWithFile(const char *file, const Rect& rect)
          */
@@ -87,7 +87,7 @@ namespace ui {
         
         /**
          * Creates a 9-slice sprite with a texture file. The whole texture will be
-         * broken down into a 3×3 grid of equal blocks.
+         * broken down into a 3x3 grid of equal blocks.
          *
          * @see initWithFile(const char *file)
          */
@@ -151,7 +151,7 @@ namespace ui {
         
         /**
          * Initializes a 9-slice sprite with a texture file and a delimitation zone. The
-         * texture will be broken down into a 3×3 grid of equal blocks.
+         * texture will be broken down into a 3x3 grid of equal blocks.
          * Once the sprite is created, you can then call its "setContentSize:" method
          * to resize the sprite will all it's 9-slice goodness intract.
          * It respects the anchorPoint too.
@@ -177,7 +177,7 @@ namespace ui {
         
         /**
          * Initializes a 9-slice sprite with a texture file. The whole texture will be
-         * broken down into a 3×3 grid of equal blocks.
+         * broken down into a 3x3 grid of equal blocks.
          * Once the sprite is created, you can then call its "setContentSize:" method
          * to resize the sprite will all it's 9-slice goodness intract.
          * It respects the anchorPoint too.
