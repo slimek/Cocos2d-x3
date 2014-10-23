@@ -488,7 +488,10 @@ xcopy /Y /Q "$(ProjectDir)..\..\external\chipmunk\prebuilt\win32\release-lib\*.*
     <ClCompile Include="CCDrawNode.cpp" />
     <ClCompile Include="CCFastTMXLayer.cpp" />
     <ClCompile Include="CCFastTMXTiledMap.cpp" />
-    <ClCompile Include="CCFont.cpp" />
+    <ClCompile Include="CCFont.cpp">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4819;4267;4251;4244;4018;4056;4800;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4819;4267;4251;4244;4018;4056;4800;4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
     <ClCompile Include="CCFontAtlas.cpp" />
     <ClCompile Include="CCFontAtlasCache.cpp" />
     <ClCompile Include="CCFontCharMap.cpp" />
