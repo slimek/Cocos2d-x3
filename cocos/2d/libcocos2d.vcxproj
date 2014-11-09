@@ -217,7 +217,10 @@ xcopy /Y /Q "$(ProjectDir)..\..\external\chipmunk\prebuilt\win32\release-lib\*.*
     <ClCompile Include="..\..\external\protobuf-lite\src\google\protobuf\io\zero_copy_stream_impl_lite.cc" />
     <ClCompile Include="..\..\external\protobuf-lite\src\google\protobuf\message_lite.cc" />
     <ClCompile Include="..\..\external\protobuf-lite\src\google\protobuf\repeated_field.cc" />
-    <ClCompile Include="..\..\external\protobuf-lite\src\google\protobuf\stubs\atomicops_internals_x86_gcc.cc" />
+    <ClCompile Include="..\..\external\protobuf-lite\src\google\protobuf\stubs\atomicops_internals_x86_gcc.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\external\protobuf-lite\src\google\protobuf\stubs\atomicops_internals_x86_msvc.cc" />
     <ClCompile Include="..\..\external\protobuf-lite\src\google\protobuf\stubs\common.cc" />
     <ClCompile Include="..\..\external\protobuf-lite\src\google\protobuf\stubs\once.cc" />
