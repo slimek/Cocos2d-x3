@@ -28,6 +28,12 @@
 #include "NewAudioEngineTest.h"
 #include "ui/CocosGUI.h"
 
+void AudioEngineTestScene::runThisTest()
+{
+}
+
+#if 0
+
 using namespace cocos2d;
 using namespace cocos2d::ui;
 using namespace cocos2d::experimental;
@@ -715,5 +721,7 @@ std::string LargeAudioFileTest::title() const
 {
     return "Test large audio file";
 }
+
+#endif
 
 #endif

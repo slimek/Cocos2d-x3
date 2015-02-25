@@ -1,5 +1,9 @@
 #include "FileUtilsTest.h"
 
+typedef __Bool Bool;
+typedef __Float Float;
+typedef __Double Double;
+
 static std::function<Layer*()> createFunctions[] = {
     CL(TestResolutionDirectories),
     CL(TestSearchPath),
