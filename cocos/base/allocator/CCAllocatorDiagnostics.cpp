@@ -27,6 +27,9 @@
 #include "CCAllocatorDiagnostics.h"
 #include "CCAllocatorGlobal.h"
 
+// SIXION ADD: Prevent linking warning: "No public symbol"
+void AllocatorDiagnosticsDummy() {}
+
 NS_CC_BEGIN
 NS_CC_ALLOCATOR_BEGIN
 

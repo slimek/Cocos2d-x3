@@ -23,3 +23,6 @@
  ****************************************************************************/
 
 #include "WidgetCallBackHandlerProtocol.h"
+
+// SIXION ADD: Prevent linking warning: "No public symbol"
+void WidgetCallBackHandlerProtocolDummy() {}

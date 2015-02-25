@@ -28,6 +28,9 @@
 #include <new>
 #include <exception>
 
+// SIXION ADD: Prevent linking warning: "No public symbol"
+void AllocatorGlobalNewDeleteDummy() {}
+
 USING_NS_CC_ALLOCATOR;
 
 #if CC_ENABLE_ALLOCATOR
