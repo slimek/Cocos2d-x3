@@ -94,6 +94,9 @@ public:
     */
     virtual void applicationWillEnterForeground() = 0;
 
+    // SIXION ADD: For desktop app termination.
+    virtual void applicationWillTerminate() {}
+
     /**
     @brief    Callback by Director for limit FPS.
     @param interval The time, expressed in seconds, between current frame and next.

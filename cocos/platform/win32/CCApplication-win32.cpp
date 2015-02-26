@@ -106,6 +106,10 @@ int Application::run()
         director = nullptr;
     }
     glview->release();
+
+    // SIXION ADD : Post a terminate event in Win32
+    applicationWillTerminate();
+
     return true;
 }
 
