@@ -30,8 +30,11 @@ CCSpriteLoader.cpp
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/..
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/.. \
-                    $(LOCAL_PATH)/../../2d \
+LOCAL_C_INCLUDES := \
+	$(LOCAL_PATH)/.. \
+	$(LOCAL_PATH)/../.. \
+	$(LOCAL_PATH)/../../2d \
+	$(LOCAL_PATH)/../../.. \
                     
 
 LOCAL_STATIC_LIBRARIES := cocos_extension_static

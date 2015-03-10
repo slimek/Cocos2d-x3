@@ -75,8 +75,13 @@ WidgetReader/ArmatureNodeReader/ArmatureNodeReader.cpp
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/..
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/.. \
-                    $(LOCAL_PATH)/WidgetReader
+LOCAL_C_INCLUDES := \
+	$(LOCAL_PATH)/WidgetReader \
+	$(LOCAL_PATH)/.. \
+	$(LOCAL_PATH)/../.. \
+	$(LOCAL_PATH)/../../../external \
+	$(LOCAL_PATH)/../../../external/tinyxml2 \
+	$(LOCAL_PATH)/../../../extensions \
 
 LOCAL_CFLAGS += -fexceptions
 

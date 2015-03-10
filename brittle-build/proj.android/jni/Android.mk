@@ -13,7 +13,18 @@ $(call import-add-path,../..)
 $(call import-add-path,../../cocos)
 $(call import-add-path,../../external)
 
-include ../../cocos/Android.mk
+include ../../cocos/platform/android/Android.mk
+include ../../cocos/3d/Android.mk
+include ../../cocos/audio/android/Android.mk
+include ../../cocos/editor-support/cocosbuilder/Android.mk
+include ../../cocos/editor-support/cocostudio/Android.mk
+include ../../cocos/editor-support/spine/Android.mk
+include ../../cocos/network/Android.mk
+include ../../cocos/ui/Android.mk
+include ../../extensions/Android.mk
+include ../../external/Box2D/Android.mk
+include ../../external/flatbuffers/Android.mk
+
 
 COCOS_BUILT_MODULE := $(LOCAL_BUILT_MODULE)
 

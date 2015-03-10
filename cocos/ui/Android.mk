@@ -40,7 +40,10 @@ shaders/UIShaders.cpp \
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../editor-support
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../editor-support
+LOCAL_C_INCLUDES := \
+	$(LOCAL_PATH)/.. \
+	$(LOCAL_PATH)/../editor-support \
+	$(LOCAL_PATH)/../platform/android \
 
 LOCAL_STATIC_LIBRARIES := cocos_extension_static
 

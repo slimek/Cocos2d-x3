@@ -35,7 +35,14 @@ LOCAL_STATIC_LIBRARIES += box2d_static
 
 LOCAL_CXXFLAGS += -fexceptions
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)
+LOCAL_C_INCLUDES := \
+	$(LOCAL_PATH) \
+	$(LOCAL_PATH)/.. \
+	$(LOCAL_PATH)/../cocos \
+	$(LOCAL_PATH)/../cocos/platform \
+	$(LOCAL_PATH)/../external \
+	$(LOCAL_PATH)/../external/curl/include/android/ \
+	$(LOCAL_PATH)/../external/unzip \
 
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/. \
                            $(LOCAL_PATH)/.. \
