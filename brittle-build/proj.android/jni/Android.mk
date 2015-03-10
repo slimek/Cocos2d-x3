@@ -13,6 +13,7 @@ $(call import-add-path,../..)
 $(call import-add-path,../../cocos)
 $(call import-add-path,../../external)
 
+include ../../cocos/Android.mk
 include ../../cocos/platform/android/Android.mk
 include ../../cocos/3d/Android.mk
 include ../../cocos/audio/android/Android.mk
@@ -25,8 +26,19 @@ include ../../extensions/Android.mk
 include ../../external/Box2D/Android.mk
 include ../../external/flatbuffers/Android.mk
 
-
-COCOS_BUILT_MODULE := $(LOCAL_BUILT_MODULE)
+COCOS_LIBRARIES := \
+	cocos2dx_internal_static \
+	cocos2dxandroid_static \
+	cocos3d_static \
+	cocosdenshion_static \
+	cocosbuilder_static \
+	cocostudio_static \
+	spine_static \
+	cocos_network_static \
+	cocos_ui_static \
+	cocos_extension_static \
+	box2d_static \
+	cocos_flatbuffers_static \
 
 
 #
@@ -46,8 +58,9 @@ endef
 
 all: $(COCOS_ARCH_ABI)
 
-$(COCOS_ARCH_ABI): $(COCOS_BUILT_MODULE)
+$(COCOS_ARCH_ABI): $(COCOS_LIBRARIES)
 	$(call host-mkdir,$(COCOS_LIB))
 	$(call host-mkdir,$(COCOS_LIB_NDK_CFG))
 	$(call host-mkdir,$(COCOS_LIB_NDK_CFG)/$@)
+	$(call cocos-copy,*.a)
 
