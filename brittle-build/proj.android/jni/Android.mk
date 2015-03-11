@@ -56,6 +56,11 @@ define cocos-copy
   $(call host-cp,obj/$(COCOS_CONFIG)/local/$@/$1,$(COCOS_LIB_NDK_CFG)/$@/$1)
 endef
 
+# $(call external-copy,lib-name)
+define external-copy
+	$(call host-cp,$(COCOS_EXTERNAL)/$1/prebuilt/android/$@/*.a,$(COCOS_LIB_NDK_CFG)/$@/*.a)
+endef
+
 all: $(COCOS_ARCH_ABI)
 
 $(COCOS_ARCH_ABI): $(COCOS_LIBRARIES)
@@ -63,4 +68,11 @@ $(COCOS_ARCH_ABI): $(COCOS_LIBRARIES)
 	$(call host-mkdir,$(COCOS_LIB_NDK_CFG))
 	$(call host-mkdir,$(COCOS_LIB_NDK_CFG)/$@)
 	$(call cocos-copy,*.a)
-
+	$(call external-copy,chipmunk)
+	$(call external-copy,curl)
+	$(call external-copy,freetype2)
+	$(call external-copy,jpeg)
+	$(call external-copy,png)
+	$(call external-copy,tiff)
+	$(call external-copy,webp)
+	$(call external-copy,websockets)

@@ -49,13 +49,18 @@ using namespace cocos2d;
 extern "C"
 {
 
+// BRITTLE Modify: JNI_OnLoad() moved to GameApp_android.cpp
+/*
 jint JNI_OnLoad(JavaVM *vm, void *reserved)
 {
     JniHelper::setJavaVM(vm);
 
     return JNI_VERSION_1_4;
 }
+*/
 
+// BRITTLE Modify: Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeInit() moved to GameApp_android.cpp
+/*
 void Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeInit(JNIEnv*  env, jobject thiz, jint w, jint h)
 {
     auto director = cocos2d::Director::getInstance();
@@ -82,6 +87,7 @@ void Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeInit(JNIEnv*  env, jobject thi
         director->setGLDefaultValues();
     }
 }
+*/
 
 jintArray Java_org_cocos2dx_lib_Cocos2dxActivity_getGLContextAttrs(JNIEnv*  env, jobject thiz)
 {
