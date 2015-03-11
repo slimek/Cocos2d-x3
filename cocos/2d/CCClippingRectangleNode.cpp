@@ -51,10 +51,32 @@ void ClippingRectangleNode::onBeforeVisitScissor()
             parent = parent->getParent();
         }
         
+		/*
         const Point pos = convertToWorldSpace(Point(_clippingRegion.origin.x, _clippingRegion.origin.y));
         GLView* glView = Director::getInstance()->getOpenGLView();
         glView->setScissorInPoints(pos.x * scaleX,
                                    pos.y * scaleY,
+                                   _clippingRegion.size.width * scaleX,
+                                   _clippingRegion.size.height * scaleY);
+		*/
+		// BRITTLE FIX
+		Point pos = convertToWorldSpace(Point(_clippingRegion.origin.x, _clippingRegion.origin.y));
+        GLView* glView = Director::getInstance()->getOpenGLView();
+
+		// Support negative scaling.
+		if( scaleX < 0.f )
+		{
+			pos.x += _clippingRegion.size.width * scaleX;
+			scaleX = -1 * scaleX;
+		}
+		if( scaleY < 0.f )
+		{
+			pos.y += _clippingRegion.size.height * scaleY;
+			scaleY = -1 * scaleY;
+		}
+
+		glView->setScissorInPoints(pos.x ,
+                                   pos.y ,
                                    _clippingRegion.size.width * scaleX,
                                    _clippingRegion.size.height * scaleY);
     }
