@@ -75,7 +75,9 @@ THE SOFTWARE.
 #endif
 
 // win32
-#if defined(_WIN32) && defined(_WINDOWS)
+//#if defined(_WIN32) && defined(_WINDOWS)
+// BRITTLE FIX
+#if defined(_WIN32) 
     #undef  CC_TARGET_PLATFORM
     #define CC_TARGET_PLATFORM         CC_PLATFORM_WIN32
 #endif
