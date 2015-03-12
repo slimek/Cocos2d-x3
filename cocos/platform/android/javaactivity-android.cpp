@@ -42,7 +42,9 @@ THE SOFTWARE.
 #define  LOG_TAG    "main"
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG,LOG_TAG,__VA_ARGS__)
 
-void cocos_android_app_init(JNIEnv* env, jobject thiz) __attribute__((weak));
+// BRITTLE Modify: It is mandatory to provide this function. Why it is weak?
+//void cocos_android_app_init(JNIEnv* env, jobject thiz) __attribute__((weak));
+void cocos_android_app_init(JNIEnv* env, jobject thiz);
 
 using namespace cocos2d;
 
