@@ -10,13 +10,18 @@
 
 using namespace cocos2d;
 
+// BRITTLE Add
+// Apps MUST provide this function, and
+// call cocos2d::Director::getInstance()->mainLoop() in it.
+void cocos_android_app_render();
+
 extern "C" {
 
-	// BRITTLE Modify: nativeRender() moved to GameApp_android.cpp
-
-    //JNIEXPORT void JNICALL Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeRender(JNIEnv* env) {
-    //   cocos2d::Director::getInstance()->mainLoop();
-    //}
+    JNIEXPORT void JNICALL Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeRender(JNIEnv* env) {
+    	// BRITTLE Modify
+    	//cocos2d::Director::getInstance()->mainLoop();
+    	cocos_android_app_render();
+    }
 
     JNIEXPORT void JNICALL Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeOnPause() {
         if (Director::getInstance()->getOpenGLView()) {
