@@ -76,3 +76,37 @@ $(COCOS_ARCH_ABI): $(COCOS_LIBRARIES)
 	$(call external-copy,tiff)
 	$(call external-copy,webp)
 	$(call external-copy,websockets)
+
+	
+	
+#
+# Clean the output directories
+#
+
+clean: $(COCOS_ARCH_ABI)-clean
+
+$(COCOS_ARCH_ABI)-clean:
+	$(call host-rm,$(COCOS_LIB_NDK_CFG)/$(subst -clean,,$@)/*.a)
+		
+		
+#
+# Appendix
+# - Validate all necessary NDK undocumented macros are defined
+#
+
+ifndef LOCAL_BUILT_MODULE
+$(error LOCAL_BUILT_MODULE not defined)
+endif
+ 
+ifndef host-mkdir
+$(error host-mkdir not defined)
+endif
+ 
+ifndef host-cp
+$(error host-cp not defined)
+endif
+ 
+ifndef host-rm
+$(error host-rm not defined)
+endif
+		
