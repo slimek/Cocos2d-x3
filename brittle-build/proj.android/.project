@@ -98,7 +98,7 @@
 		<link>
 			<name>src.cocos</name>
 			<type>2</type>
-			<location>D:/Programs/Cocos2d-x3/cocos</location>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/cocos</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
