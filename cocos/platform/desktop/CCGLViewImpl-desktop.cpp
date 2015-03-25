@@ -728,13 +728,35 @@ void GLViewImpl::onGLFWWindowSizeFunCallback(GLFWwindow *window, int width, int 
 
 void GLViewImpl::onGLFWWindowIconifyCallback(GLFWwindow* window, int iconified)
 {
-    if (iconified == GL_TRUE)
+    // BRITTLE Modify
+    // - 1. When the window get/lose focus, the IconifyCallback() is also called.
+    //      Therefore we use "focused" instead of "iconfied" to determine if the 
+    //      window is entering background.
+    //   2. When the window iconfy/restore, the IconifyCallback() may be called twice.
+    //      We add a flag the keep each event may only post once.
+    //if (iconified == GL_TRUE)
+    //{
+    //    Application::getInstance()->applicationDidEnterBackground();
+    //}
+    //else
+    //{
+    //    Application::getInstance()->applicationWillEnterForeground();
+    //}
+    if (glfwGetWindowAttrib( window, GLFW_FOCUSED) == GL_FALSE)
     {
-        Application::getInstance()->applicationDidEnterBackground();
+        if ( !_inBackground )
+        {
+            Application::getInstance()->applicationDidEnterBackground();
+            _inBackground = true;
+        }
     }
     else
     {
-        Application::getInstance()->applicationWillEnterForeground();
+        if ( _inBackground )
+        {
+            Application::getInstance()->applicationWillEnterForeground();
+            _inBackground = false;
+        }
     }
 }
 
