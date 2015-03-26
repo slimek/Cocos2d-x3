@@ -101,12 +101,20 @@ public:
         return _startupScriptFilename;
     }
 
+    // BRITTLE Add
+    void EnterBackground();
+    void EnterForeground();
+
+
 protected:
     HINSTANCE           _instance;
     HACCEL              _accelTable;
     LARGE_INTEGER       _animationInterval;
     std::string         _resourceRootPath;
     std::string         _startupScriptFilename;
+
+    // BRITTLE Add
+    bool _inBackground { false };
 
     static Application * sm_pSharedApplication;
 };

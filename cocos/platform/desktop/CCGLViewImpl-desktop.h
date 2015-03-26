@@ -146,9 +146,6 @@ protected:
     float _mouseX;
     float _mouseY;
 
-    // BRITTLE Add
-    bool _inBackground { false };
-
     friend class GLFWEventHandler;
 
 private:

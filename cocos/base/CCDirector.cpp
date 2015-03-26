@@ -946,7 +946,10 @@ void Director::restart()
 void Director::reset()
 {
     // SIXION ADD : Post a terminate event in Win32
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+    Application::getInstance()->EnterBackground();
     Application::getInstance()->applicationWillTerminate();
+#endif
 
     // cleanup scheduler
     getScheduler()->unscheduleAll();

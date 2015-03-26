@@ -246,6 +246,28 @@ void Application::setStartupScriptFilename(const std::string& startupScriptFile)
     std::replace(_startupScriptFilename.begin(), _startupScriptFilename.end(), '\\', '/');
 }
 
+// BRITTLE Add
+// - Use a flag to moderate enter back/foreground events
+
+void Application::EnterBackground()
+{
+    if ( ! _inBackground )
+    {
+        _inBackground = true;
+        this->applicationDidEnterBackground();
+    }
+}
+
+void Application::EnterForeground()
+{
+    if ( _inBackground )
+    {
+        _inBackground = false;
+        this->applicationWillEnterForeground();
+    }
+}
+
+
 NS_CC_END
 
 //////////////////////////////////////////////////////////////////////////
