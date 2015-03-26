@@ -146,7 +146,8 @@ public:
      */
     void reserve(ssize_t n)
     {
-        _data.reserve(n);
+        // BRITTLE Modify: add casting
+        _data.reserve(static_cast<std::size_t>(n));
     }
     
     /** @brief Returns the size of the storage space currently allocated for the vector, expressed in terms of elements.
@@ -165,7 +166,8 @@ public:
      */
     ssize_t size() const
     {
-        return  _data.size();
+        // BRITTLE Modify
+        return static_cast< ssize_t >( _data.size() );
     }
     
     /** @brief Returns whether the vector is empty (i.e. whether its size is 0).
@@ -210,7 +212,8 @@ public:
     T at(ssize_t index) const
     {
         CCASSERT( index >= 0 && index < size(), "index out of range in getObjectAtIndex()");
-        return _data[index];
+        // BRITTLE Modify : add casting
+        return _data[static_cast<std::size_t>(index)];
     }
 
     /** Returns the first element in the vector. */
