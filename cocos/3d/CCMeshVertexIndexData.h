@@ -96,10 +96,12 @@ public:
     const VertexBuffer* getVertexBuffer() const { return _vertexBuffer; }
     
     /** get attributes count */
-    ssize_t getMeshVertexAttribCount() const { return _attribs.size(); }
+    // BRITTLE Modify: add casting
+    ssize_t getMeshVertexAttribCount() const { return static_cast< ssize_t >( _attribs.size() ); }
     
     /** get attribute by index */
-    const MeshVertexAttrib& getMeshVertexAttrib(ssize_t index) const { return _attribs[index]; }
+    // BRITTLE Modify: add casting
+    const MeshVertexAttrib& getMeshVertexAttrib(ssize_t index) const { return _attribs[ static_cast< std::size_t >( index )]; }
     
     /** get index data count */
     ssize_t getMeshIndexDataCount() const { return _indexs.size(); }

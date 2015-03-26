@@ -248,7 +248,8 @@ public:
     inline void setAtlasIndex(int index) { _atlasIndex = index; };
 
     /** Quantity of particles that are being simulated at the moment */
-    inline unsigned int getParticleCount() const { return _particleCount; };
+    // BRITTLE Modify: add casting
+    inline unsigned int getParticleCount() const { return static_cast< unsigned int >( _particleCount ); };
     
     /** How many seconds the emitter will run. -1 means 'forever' */
     inline float getDuration() const { return _duration; };

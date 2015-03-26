@@ -173,12 +173,14 @@ public:
 
     // vertex attribs
     uint32_t getVertexAttribsFlags() const { return _vertexAttribsFlags; }
-    ssize_t getVertexAttribCount() const { return _attributes.size(); }
+    // BRITTLE Modify: add casting
+    ssize_t getVertexAttribCount() const { return static_cast< ssize_t >(_attributes.size()); }
     void setVertexAttribCallback(const std::string &name, const std::function<void(VertexAttrib*)> &callback);
     void setVertexAttribPointer(const std::string &name, GLint size, GLenum type, GLboolean normalized, GLsizei stride, GLvoid *pointer);
 
     // user defined uniforms
-    ssize_t getUniformCount() const { return _uniforms.size(); }
+    // BRITTLE Modify: add casting
+    ssize_t getUniformCount() const { return static_cast< ssize_t >(_uniforms.size()); }
     void setUniformInt(const std::string &uniformName, int value);
     void setUniformFloat(const std::string &uniformName, float value);
     void setUniformVec2(const std::string &uniformName, const Vec2& value);

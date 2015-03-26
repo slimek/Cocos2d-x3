@@ -130,7 +130,8 @@ int AnimationCurve<componentSize>::determineIndex(float time) const
         mid = (min + max) >> 1;
         
         if (time >= _keytime[mid] && time <= _keytime[mid + 1])
-            return mid;
+            // BRITTLE Modify: add casting
+            return static_cast< int >( mid );
         else if (time < _keytime[mid])
             max = mid - 1;
         else

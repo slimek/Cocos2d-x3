@@ -69,7 +69,8 @@ public:
     RenderCommand* operator[](ssize_t index) const;
     void clear();
     inline std::vector<RenderCommand*>& getSubQueue(QUEUE_GROUP group) { return _commands[group]; }
-    inline ssize_t getSubQueueSize(QUEUE_GROUP group) const { return _commands[group].size();}
+    // BRITTLE Modify: add casting
+    inline ssize_t getSubQueueSize(QUEUE_GROUP group) const { return static_cast< ssize_t >( _commands[group].size() );}
 
     void saveRenderState();
     void restoreRenderState();
