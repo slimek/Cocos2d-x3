@@ -729,11 +729,16 @@ void GLViewImpl::onGLFWWindowSizeFunCallback(GLFWwindow *window, int width, int 
 void GLViewImpl::onGLFWWindowIconifyCallback(GLFWwindow* window, int iconified)
 {
     // BRITTLE Modify: for Win32 platform.
-    // - 1. When the window get/lose focus, the IconifyCallback() is also called.
-    //      Therefore we use "focused" instead of "iconfied" to determine if the 
-    //      window is entering background.
+    // - It has two problems of using GLFW iconify event to simulate entering
+    //   fore/background events:
+    //
+    //   1. When the window get/lose focus, the IconifyCallback() is also called.
     //   2. When the window iconfy/restore, the IconifyCallback() may be called twice.
-    //      We add a flag the keep each event may only post once.
+    //
+    //   To solve these problems, we add a flag in Application (Win32 only) to
+    //   remember if the app is in background, then use it to determine whether to
+    //   trigger an event.
+    //
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
     if (iconified == GL_TRUE)
     {
