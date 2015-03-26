@@ -107,9 +107,6 @@ int Application::run()
     }
     glview->release();
 
-    // SIXION ADD : Post a terminate event in Win32
-    applicationWillTerminate();
-
     return true;
 }
 

@@ -945,6 +945,9 @@ void Director::restart()
 
 void Director::reset()
 {
+    // SIXION ADD : Post a terminate event in Win32
+    Application::getInstance()->applicationWillTerminate();
+
     // cleanup scheduler
     getScheduler()->unscheduleAll();
     
