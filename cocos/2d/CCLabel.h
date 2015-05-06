@@ -422,7 +422,7 @@ NS_CC_END
 #elif ( CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 )  // Brittle only supports Windows 7 or later
 #define CC_DEFAULT_LABEL_FONT "Segoe UI"
 #else  // the default label font of Cocos2d-x v3
-#define CC_DEFATUL_LABEL_FONT "Helvetica"
+#define CC_DEFAULT_LABEL_FONT "Helvetica"
 #endif
 
 
