@@ -63,7 +63,9 @@ ControlButton::~ControlButton()
 
 bool ControlButton::init()
 {
-    return this->initWithLabelAndBackgroundSprite(Label::createWithSystemFont("", "Helvetica", 12), cocos2d::ui::Scale9Sprite::create());
+    // BRITTLE Modify: Each platform has itsown default font.
+    // return this->initWithLabelAndBackgroundSprite(Label::createWithSystemFont("", "Helvetica", 12), cocos2d::ui::Scale9Sprite::create());
+    return this->initWithLabelAndBackgroundSprite(Label::createWithSystemFont("", CC_DEFAULT_LABEL_FONT, 12), cocos2d::ui::Scale9Sprite::create());
 }
 
 bool ControlButton::initWithLabelAndBackgroundSprite(Node* node, ui::Scale9Sprite* backgroundSprite)

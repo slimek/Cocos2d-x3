@@ -305,7 +305,9 @@ void Label::reset()
     _fontConfig = temp;
 
     _systemFontDirty = false;
-    _systemFont = "Helvetica";
+    // BRITTLE Modify: Each platform has itsown default font.
+    //_systemFont = "Helvetica";
+    _systemFont = CC_DEFAULT_LABEL_FONT;
     _systemFontSize = 12;
 
     _batchNodes.clear();
