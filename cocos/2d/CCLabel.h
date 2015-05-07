@@ -417,10 +417,10 @@ private:
 NS_CC_END
 
 // BRITTLE Insert: Each platform has itsown default font.
-#if ( CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID )  // Brittle only supports Android 4.0 or later.
+#if ( CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID )   // Android 4.0 or later.
 #define CC_DEFAULT_LABEL_FONT "Roboto"
-#elif ( CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 )  // Brittle only supports Windows 7 or later
-#define CC_DEFAULT_LABEL_FONT "Segoe UI"
+#elif ( CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 )
+#define CC_DEFAULT_LABEL_FONT "Microsoft JhengHei"  // Windows Vista or later, for better Chinese presentation.
 #else  // the default label font of Cocos2d-x v3
 #define CC_DEFAULT_LABEL_FONT "Helvetica"
 #endif
