@@ -190,7 +190,9 @@ public class Cocos2dxEditBoxDialog extends Dialog {
                 this.mInputModeContraints = InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS;
                 break;
             case kEditBoxInputModeNumeric:
-                this.mInputModeContraints = InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED;
+                //BRITTLE Modify
+                //this.mInputModeContraints = InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_SIGNED;
+                this.mInputModeContraints = InputType.TYPE_CLASS_NUMBER;
                 break;
             case kEditBoxInputModePhoneNumber:
                 this.mInputModeContraints = InputType.TYPE_CLASS_PHONE;
