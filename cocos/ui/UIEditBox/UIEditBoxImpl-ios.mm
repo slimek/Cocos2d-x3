@@ -421,7 +421,9 @@ void EditBoxImplIOS::setInputMode(EditBox::InputMode inputMode)
             _systemControl.textField.keyboardType = UIKeyboardTypeEmailAddress;
             break;
         case EditBox::InputMode::NUMERIC:
-            _systemControl.textField.keyboardType = UIKeyboardTypeDecimalPad;
+            //BRITTLE Modify
+            //_systemControl.textField.keyboardType = UIKeyboardTypeDecimalPad;
+            _systemControl.textField.keyboardType = UIKeyboardTypeNumberPad;
             break;
         case EditBox::InputMode::PHONE_NUMBER:
             _systemControl.textField.keyboardType = UIKeyboardTypePhonePad;
