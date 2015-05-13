@@ -94,7 +94,7 @@ public:
      
      @param   radius A float number, it is the circle's radius.
      @param   material A PhysicsMaterial object, the default value is PHYSICSSHAPE_MATERIAL_DEFAULT.
-     @param   offset A Vec2 object, it is the offset from the body’s center of gravity in body local coordinates.
+     @param   offset A Vec2 object, it is the offset from the body's center of gravity in body local coordinates.
      @return  An autoreleased PhysicsBody object pointer.
      */
     static PhysicsBody* createCircle(float radius, const PhysicsMaterial& material = PHYSICSBODY_MATERIAL_DEFAULT, const Vec2& offset = Vec2::ZERO);
@@ -103,7 +103,7 @@ public:
      *
      * @param   size Size contains this box's width and height.
      * @param   material A PhysicsMaterial object, the default value is PHYSICSSHAPE_MATERIAL_DEFAULT.
-     * @param   offset A Vec2 object, it is the offset from the body’s center of gravity in body local coordinates.
+     * @param   offset A Vec2 object, it is the offset from the body's center of gravity in body local coordinates.
      * @return  An autoreleased PhysicsBody object pointer.
      */
     static PhysicsBody* createBox(const Size& size, const PhysicsMaterial& material = PHYSICSBODY_MATERIAL_DEFAULT, const Vec2& offset = Vec2::ZERO);
@@ -114,7 +114,7 @@ public:
      * @param   points Points is an array of Vec2 structs defining a convex hull with a clockwise winding.
      * @param   count An interger number, contains the count of the points array.
      * @param   material A PhysicsMaterial object, the default value is PHYSICSSHAPE_MATERIAL_DEFAULT.
-     * @param   offset A Vec2 object, it is the offset from the body’s center of gravity in body local coordinates.
+     * @param   offset A Vec2 object, it is the offset from the body's center of gravity in body local coordinates.
      * @return  An autoreleased PhysicsBody object pointer.
      */
     static PhysicsBody* createPolygon(const Vec2* points, int count, const PhysicsMaterial& material = PHYSICSBODY_MATERIAL_DEFAULT, const Vec2& offset = Vec2::ZERO);
@@ -136,7 +136,7 @@ public:
      * @param   size Size contains this box's width and height.
      * @param   material A PhysicsMaterial object, the default value is PHYSICSSHAPE_MATERIAL_DEFAULT.
      * @param   border It's a edge's border width.
-     * @param   offset A Vec2 object, it is the offset from the body’s center of gravity in body local coordinates.
+     * @param   offset A Vec2 object, it is the offset from the body's center of gravity in body local coordinates.
      * @return  An autoreleased PhysicsBody object pointer.
      */
     static PhysicsBody* createEdgeBox(const Size& size, const PhysicsMaterial& material = PHYSICSBODY_MATERIAL_DEFAULT, float border = 1, const Vec2& offset = Vec2::ZERO);
@@ -225,7 +225,7 @@ public:
      Applies a continuous force to body.
      
      @param force The force is applies to this body.
-     @param offset A Vec2 object, it is the offset from the body’s center of gravity in world coordinates.
+     @param offset A Vec2 object, it is the offset from the body's center of gravity in world coordinates.
      */
     virtual void applyForce(const Vect& force, const Vec2& offset);
 
@@ -245,7 +245,7 @@ public:
      Applies a immediate force to body.
      
      @param impulse The impulse is applies to this body.
-     @param offset A Vec2 object, it is the offset from the body’s center of gravity in world coordinates.
+     @param offset A Vec2 object, it is the offset from the body's center of gravity in world coordinates.
      */
     virtual void applyImpulse(const Vect& impulse, const Vec2& offset);
     

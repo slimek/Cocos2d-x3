@@ -47,7 +47,7 @@ public:
     ssize_t getVecCount(){return points.size();};
     std::vector<cocos2d::Vec2> getPoints(){return points;};
     void printPoints();
-    //using Ramer–Douglas–Peucker algorithm
+    //using Ramer-Douglas-Peucker algorithm
     void optimize(float level = 0);
 protected:
     unsigned int findFirstNoneTransparentPixel();

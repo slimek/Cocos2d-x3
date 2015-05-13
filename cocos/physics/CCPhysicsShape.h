@@ -374,7 +374,7 @@ public:
      *
      * @param   radius A float number, it is the circle's radius.
      * @param   material A PhysicsMaterial object, the default value is PHYSICSSHAPE_MATERIAL_DEFAULT.
-     * @param   offset A Vec2 object, it is the offset from the body’s center of gravity in body local coordinates.
+     * @param   offset A Vec2 object, it is the offset from the body's center of gravity in body local coordinates.
      * @return  An autoreleased PhysicsShapeCircle object pointer.
      */
     static PhysicsShapeCircle* create(float radius, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, const Vec2& offset = Vec2(0, 0));
@@ -392,7 +392,7 @@ public:
      *
      * @param mass A float number
      * @param radius A float number
-     * @param offset A Vec2 object, it is the offset from the body’s center of gravity in body local coordinates.
+     * @param offset A Vec2 object, it is the offset from the body's center of gravity in body local coordinates.
      * @return A float number
      */
     static float calculateMoment(float mass, float radius, const Vec2& offset = Vec2::ZERO);
@@ -438,7 +438,7 @@ public:
      * @param   points A Vec2 object pointer, it is an array of Vec2.
      * @param   count An interger number, contains the count of the points array.
      * @param   material A PhysicsMaterial object, the default value is PHYSICSSHAPE_MATERIAL_DEFAULT.
-     * @param   offset A Vec2 object, it is the offset from the body’s center of gravity in body local coordinates.
+     * @param   offset A Vec2 object, it is the offset from the body's center of gravity in body local coordinates.
      * @return  An autoreleased PhysicsShapePolygon object pointer.
      */
     static PhysicsShapePolygon* create(const Vec2* points, int count, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, const Vec2& offset = Vec2::ZERO);
@@ -458,7 +458,7 @@ public:
      * @param mass A float number
      * @param   points A Vec2 object pointer, it is an array of Vec2.
      * @param   count An interger number, contains the count of the points array.
-     * @param offset A Vec2 object, it is the offset from the body’s center of gravity in body local coordinates.
+     * @param offset A Vec2 object, it is the offset from the body's center of gravity in body local coordinates.
      * @return A float number
      */
     static float calculateMoment(float mass, const Vec2* points, int count, const Vec2& offset = Vec2::ZERO);
@@ -517,7 +517,7 @@ public:
      *
      * @param   size Size contains this box's width and height.
      * @param   material A PhysicsMaterial object, the default value is PHYSICSSHAPE_MATERIAL_DEFAULT.
-     * @param   offset A Vec2 object, it is the offset from the body’s center of gravity in body local coordinates.
+     * @param   offset A Vec2 object, it is the offset from the body's center of gravity in body local coordinates.
      * @return  An autoreleased PhysicsShapeBox object pointer.
      */
     static PhysicsShapeBox* create(const Size& size, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, const Vec2& offset = Vec2::ZERO);
@@ -648,7 +648,7 @@ public:
      * @param   size Size contains this box's width and height.
      * @param   material A PhysicsMaterial object, the default value is PHYSICSSHAPE_MATERIAL_DEFAULT.
      * @param   border It's a edge's border width.
-     * @param   offset A Vec2 object, it is the offset from the body’s center of gravity in body local coordinates.
+     * @param   offset A Vec2 object, it is the offset from the body's center of gravity in body local coordinates.
      * @return  An autoreleased PhysicsShapeEdgeBox object pointer.
      */
     static PhysicsShapeEdgeBox* create(const Size& size, const PhysicsMaterial& material = PHYSICSSHAPE_MATERIAL_DEFAULT, float border = 0, const Vec2& offset = Vec2::ZERO);
