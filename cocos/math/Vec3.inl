@@ -50,7 +50,9 @@ inline void Vec3::add(float xx, float yy, float zz)
 
 inline float Vec3::length() const
 {
-    return sqrt(x * x + y * y + z * z);
+    // BRITTLE Modify
+    // - Why Clang think the float operations would result in double ?
+    return static_cast< float >( sqrt(  x * x + y * y + z * z));
 }
 
 inline float Vec3::lengthSquared() const
