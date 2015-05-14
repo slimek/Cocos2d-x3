@@ -73,6 +73,7 @@ $(COCOS_ARCH_ABI): $(COCOS_LIBRARIES)
 	$(call external-copy,freetype2)
 	$(call external-copy,jpeg)
 	$(call external-copy,png)
+	$(call external-copy,zlib)
 
 	
 	
