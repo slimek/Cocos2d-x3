@@ -26,6 +26,9 @@
 #include "CCPUVertexEmitter.h"
 #include "extensions/Particle3D/PU/CCPUParticleSystem3D.h"
 
+// BRITTLE ADD: Prevent linking warning: "No public symbol"
+void PUVertexEmitterDummy();
+
 NS_CC_BEGIN
 //// Constants
 //const unsigned short Particle3DVertexEmitter::DEFAULT_STEP = 1;
