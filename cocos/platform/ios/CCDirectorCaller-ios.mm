@@ -36,6 +36,10 @@
 
 static id s_sharedDirectorCaller;
 
+// BRITTLE Insert: Block the mainLoop() when an Alert is shown
+static bool s_blockingMainLoop = NO;
+
+
 @interface NSObject(CADisplayLink)
 +(id) displayLinkWithTarget: (id)arg1 selector:(SEL)arg2;
 -(void) addToRunLoop: (id)arg1 forMode: (id)arg2;
@@ -105,9 +109,18 @@ static id s_sharedDirectorCaller;
                       
 -(void) doCaller: (id) sender
 {
+    // BRITTLE Insert
+    if ( s_blockingMainLoop ) { return; }
+
     cocos2d::Director* director = cocos2d::Director::getInstance();
     [EAGLContext setCurrentContext: [(CCEAGLView*)director->getOpenGLView()->getEAGLView() context]];
     director->mainLoop();
+}
+
+// BRITTLE Insert: Block the mainLoop() when an Alert is shown
++(void) blockMainLoop: (bool) toBlock
+{
+    s_blockingMainLoop = toBlock;
 }
 
 @end

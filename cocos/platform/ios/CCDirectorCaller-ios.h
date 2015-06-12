@@ -39,6 +39,10 @@
 -(void) setAnimationInterval:(double)interval;
 +(id) sharedDirectorCaller;
 +(void) destroy;
+
+// BRITTLE Insert: Block the mainLoop() when an Alert is shown
++(void) blockMainLoop: (bool) toBlock;
+
 @end
 
 #endif // CC_TARGET_PLATFORM == CC_PLATFORM_IOS
