@@ -64,8 +64,6 @@ endef
 all: $(COCOS_ARCH_ABI)
 
 $(COCOS_ARCH_ABI): $(COCOS_LIBRARIES)
-	$(call host-mkdir,$(COCOS_LIB))
-	$(call host-mkdir,$(COCOS_LIB_NDK_CFG))
 	$(call host-mkdir,$(COCOS_LIB_NDK_CFG)/$@)
 	$(call cocos-copy,*.a)
 	$(call external-copy,chipmunk)
